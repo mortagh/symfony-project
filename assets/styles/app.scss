@@ -1,0 +1,37 @@
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+
+    .header {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        padding: 20px 25px;
+        box-shadow: inset 0px -1px 0px #E2E2EA;
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+    }
+
+    .app-container {
+        display: flex;
+        flex: 1 1 0;
+    }
+
+    .nav-menu {
+        width: 280px;
+        box-shadow: inset -1px 0px 0px #E2E2EA;
+        padding: 30px 20px 0;
+    }
+
+    .app-content {
+        flex: 1 1 0;
+    }
+}
