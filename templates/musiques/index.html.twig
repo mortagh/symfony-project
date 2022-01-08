@@ -3,18 +3,106 @@
 {% block title %}Hello MusiquesController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<main>
+    <div class="search-header">
+        <label class="label-search" for="search"><i class="fas fa-search"></i>
+            <input type="text" name="search" id="search" placeholder="RECHERCHER">
+        </label>
+    </div>
+    <h1 class="page-title">
+        Bibliothèque musicale
+    </h1>
+    <div class="musics-list">
+        <div class="music-item">
+            <div class="music-cover music-cover-list">
+                <img src="img/covers/subzero.jpg" alt="subzero-cover">
+            </div>
+            <div class="music-info">
+                <div class="ctn-msc-info">
+                    <span class="music-title title-item">subzero</span>
+                    <span class="music-artist artist-item">Ben Klock</span>
+                </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            </div>
+            <span class="album-name">Crush</span>
+            <div class="more-info">
+                <span class="music-rating">4.5</span>
+                <span class="music-duration">3:50</span>
+            </div>
+            <audio src="" id="audio"></audio>
+        </div>
+        <div class="music-item">
+            <div class="music-cover">
+                <img src="img/covers/smack-that.jpg" alt="smack-that-cover">
+            </div>
+            <div class="music-info">
+                <div class="ctn-msc-info">
+                    <span class="music-title title-item">smack-that</span>
+                    <span class="music-artist artist-item">akon</span>
+                </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/symfony/symfony-project/src/Controller/MusiquesController.php'|file_link(0) }}">src/Controller/MusiquesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/symfony/symfony-project/templates/musiques/index.html.twig'|file_link(0) }}">templates/musiques/index.html.twig</a></code></li>
-    </ul>
+            </div>
+            <span class="album-name">blum</span>
+            <div class="more-info">
+                <span class="music-rating">4.5</span>
+                <span class="music-duration">3:50</span>
+            </div>
+            <audio src="" id="audio"></audio>
+        </div>
+        <div class="music-item">
+            <div class="music-cover">
+                <img src="img/covers/deprogramming.jpg" alt="deprogramming-cover">
+            </div>
+            <div class="music-info">
+                <div class="ctn-msc-info">
+                    <span class="music-title title-item">deprogramming</span>
+                    <span class="music-artist artist-item">Adam X</span>
+                </div>
+
+            </div>
+            <span class="album-name">FFFFF</span>
+            <div class="more-info">
+                <span class="music-rating">4.5</span>
+                <span class="music-duration">3:50</span>
+            </div>
+            <audio src="" id="audio"></audio>
+        </div>
+
+    </div>
+</main>
+<div class="ctrl-panel">
+    <div class="container-panel">
+        <div class="msc-played">
+            <div class="music-cover cover-played">
+                <img src="" alt="music-cover">
+            </div>
+            <div class="pnl-music-info">
+                <span class="music-title title-played"></span>
+                <span class="music-artist artist-played"></span>
+            </div>
+        </div>
+        <div class="music-control">
+            <div class="ctrl-btns">
+                <button id="prev" class="action-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="play" class="action-btn action-btn-big">
+                    <i class="fas fa-circle-play"></i>
+                </button>
+                <button id="next" class="action-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+            <div class="timeline">
+                <span class="pgs-duration">0</span>
+                <div id="timeline">
+                    <div id="progress"></div>
+                </div>
+                <span class="music-duration">3:50</span>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 {% endblock %}

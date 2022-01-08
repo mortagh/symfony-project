@@ -1,9 +1,38 @@
-<header>
+<header class="header">
+    <div class="logo-symfony">
+        Symfony
+    </div>
     <nav>
-        <a href="{{ path('home') }}">Accueil</a>
-        <a href="{{ path('musiques') }}">Parcourir</a>
-        <a href="{{ path('album') }}">Album</a>
-        <a href="{{ path('artistes') }}">Artistes</a>
-        <a href="{{ path('blog') }}">Actualités</a>
+        <ul class="nav-links">
+            <div class="container-li">
+                <li class="nav-link"><a class="link-header" href="{{ path('home') }}"><span
+                            class="link-ico icon-ico-home"></span>
+                        <span>Accueil</span></a>
+                </li>
+                <li class="nav-link"><a class="link-header" href="{{ path('musiques') }}"><span
+                            class="link-ico icon-ico-music"></span>
+                        <span>Parcourir</span></a>
+                </li>
+                <li class="nav-link"><a class="link-header" href="{{ path('album') }}"><span
+                            class="link-ico icon-soundtracks"></span>
+                        <span>Albums</span></a>
+                </li>
+                <li class="nav-link"><a class="link-header" href="{{ path('artistes') }}"><span
+                            class="link-ico icon-ico-artist"></span>
+                        <span>Artists</span></a>
+                </li>
+                <li class="nav-link"><a class="link-header" href="{{ path('blog') }}"><span
+                            class="link-ico icon-ico-news"></span>
+                        <span>Actualités</span></a>
+                </li>
+            </div>
+
+        </ul>
+
     </nav>
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
 </header>
