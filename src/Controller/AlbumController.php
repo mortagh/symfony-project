@@ -17,4 +17,13 @@ class AlbumController extends AbstractController
             'controller_name' => 'AlbumController',
         ]);
     }
+    /**
+     * @Route("/album/{id}", name="view_album")
+     */
+    public function viewAlbum($id): Response
+    {
+        return $this->render('album/view.html.twig', [
+            'controller_name' => 'albumController',
+        ]);
+    }
 }

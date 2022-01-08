@@ -17,4 +17,13 @@ class MusiquesController extends AbstractController
             'controller_name' => 'MusiquesController',
         ]);
     }
+    /**
+     * @Route("/musiques/{id}", name="view_musique")
+     */
+    public function viewMusiques($id): Response
+    {
+        return $this->render('musiques/view.html.twig', [
+            'controller_name' => 'MusiqueController',
+        ]);
+    }
 }

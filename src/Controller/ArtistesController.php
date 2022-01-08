@@ -17,4 +17,13 @@ class ArtistesController extends AbstractController
             'controller_name' => 'ArtistesController',
         ]);
     }
+    /**
+     * @Route("/artistes/{id}", name="view_artiste")
+     */
+    public function viewArtiste($id): Response
+    {
+        return $this->render('artistes/view.html.twig', [
+            'controller_name' => 'ArtistesController',
+        ]);
+    }
 }
