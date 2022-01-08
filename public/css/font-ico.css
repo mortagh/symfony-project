@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?uqaioh');
+    src: url('../fonts/icomoon.eot?uqaioh#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?uqaioh') format('truetype'),
+        url('../fonts/icomoon.woff?uqaioh') format('woff'),
+        url('../fonts/icomoon.svg?uqaioh#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-soundtracks:before {
+    content: "\e900";
+}
+
+.icon-tracks:before {
+    content: "\e900";
+}
+
+.icon-music-library:before {
+    content: "\e900";
+}
+
+.icon-albums:before {
+    content: "\e900";
+}
+
+.icon-music:before {
+    content: "\e900";
+}
+
+.icon-songs-svg-icon-converted:before {
+    content: "\e900";
+}
+
+.icon-ico-news:before {
+    content: "\e901";
+}
+
+.icon-ico-artist:before {
+    content: "\e902";
+}
+
+.icon-ico-home:before {
+    content: "\e903";
+}
+
+.icon-ico-music:before {
+    content: "\e904";
+}

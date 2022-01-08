@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://use.typekit.net/ocr3ajf.css");
+
+:root {
+    --bg-color: white;
+    --secondary-color: #F8611D;
+    --black-color: #000000;
+    --optional-color: #B9DEF1;
+    --logo-font: 'Pacifico', cursive;
+    --font: omnes-pro, sans-serif;
+}
+
+* {
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+}
+
+
+/* ---------- header -------*/
+.header {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 10px;
+    height: 10vh;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+.logo-symfony {
+    font-family: var(--logo-font);
+    font-size: 2.0rem;
+    color: var(--secondary-color);
+    margin: 0 0 0 auto;
+    padding-left: 45px;
+}
+
+.nav-links {
+    padding: 15px 0;
+}
+
+
+
+.nav-links a {
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.link-ico {
+    min-width: 47.81px;
+    text-align: center;
+    font-size: 2.0rem;
+}
+
+.icon-soundtracks {
+    font-size: 3rem;
+}
+
+.icon-ico-news {
+    font-size: 1.8rem;
+}
+
+.header .link-header {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.header .link-header::before {
+    top: 90%;
+    transform: translate(-50%);
+    left: 50%;
+    content: "";
+    z-index: -10;
+    position: absolute;
+    background-color: #f4c7ab;
+    width: 0%;
+    border-radius: 30px;
+    height: 10%;
+    transition: all 0.6s ease;
+}
+
+.header .container-nav a:hover::before,
+.header .container-nav a:hover {
+    color: #b2b8a3;
+    width: 100%;
+}
+
+.header>a {
+    display: block;
+}
+
+.nav-links {
+    position: fixed;
+    width: 100%;
+    top: 10.1vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--bg-color);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px 0 0 0;
+    padding: 0;
+    height: calc(100vh - 10vh);
+    z-index: 2;
+
+
+}
+
+.nav-links li {
+    opacity: 0;
+
+}
+
+.nav-link {
+    padding: 35px;
+}
+
+
+.nav-active {
+    transform: translateX(0%);
+
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+.link-header {
+    font-size: 1.8rem;
+}
+
+.burger {
+    display: block;
+    margin: 0 0 0 auto;
+    width: 45px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.burger div {
+    border-radius: 3px;
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    transition: all 0.3s ease;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-13px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-13px, -6px);
+}
+
+/* ---------------------- main -----------------*/
+
+main {
+    padding: 12vh 10px 0 10px;
+    margin-bottom: 15vh;
+
+}
+
+.search-header {
+    min-width: 300px;
+    max-width: 600px;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+#search {
+
+    border: 1px solid var(--secondary-color);
+    height: 36px;
+    border-radius: 50px;
+    padding-left: 35px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#search::placeholder {
+    font-family: var(--font);
+}
+
+.label-search {
+    position: relative;
+}
+
+.label-search i {
+    position: absolute;
+    font-size: 0.8rem;
+    top: 7px;
+    left: 10px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ----------music list------------*/
+.musics-list {
+    width: 100%;
+
+}
+
+/* ----------music item------------*/
+.music-item {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 70px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    margin: 12px 0;
+    gap: 10px;
+    transition: box-shadow 0.1s ease-in, height 0.1s ease-in;
+}
+
+.music-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+.music-cover img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.ctrl-btn {
+    color: white;
+    position: absolute;
+    font-size: 1.7rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.music-info {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    flex: 3;
+
+}
+
+.music-info span {
+    display: block;
+}
+
+.more-info {
+    display: none;
+}
+
+.music-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.music-artist {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.album-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    flex: 2;
+}
+
+/* ----------panel-music-controll------------*/
+.ctrl-panel {
+    position: fixed;
+
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.container-panel {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    padding: 6.5px 10px;
+    min-height: 11vh;
+}
+
+.msc-played {
+    display: flex;
+}
+
+.pnl-music-info {
+    padding: 0 10px;
+}
+
+.pnl-music-info span {
+    display: block;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    bottom: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 12px;
+    text-align: center;
+}
+
+.timeline span {
+    font-weight: 600;
+    flex: 0.5;
+    color: rgb(27, 27, 27);
+}
+
+#timeline {
+    background-color: var(--black-color);
+    width: 80%;
+    flex: 4;
+    margin: 0 auto;
+    border-radius: 50px;
+    height: 7px;
+}
+
+#progress {
+    width: 0%;
+    border-radius: 50px;
+    background-color: var(--secondary-color);
+    height: 7px;
+}
+
+.music-control {
+    margin: 0 20% 0 auto;
+}
+
+.ctrl-btns {
+    width: 100px;
+    font-size: 2rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.action-btn {
+    background-color: white;
+    border: 0;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.action-btn-big {
+    font-size: 30px;
+}
+
+@media only screen and (min-width: 968px) {
+    .header {
+        height: 89vh;
+        width: 20%;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-symfony {
+        margin: 0 0 0 0;
+        padding: 20px 0 0 0;
+        flex: 0.5;
+    }
+
+    .ctrl-panel {
+        z-index: 1;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    main {
+        padding: 5vh 10px 0 calc(20% + 10px);
+    }
+
+    .nav-links {
+        position: initial;
+        background-color: rgba(0, 0, 0, 0.0);
+        box-shadow: none;
+        transform: translateX(0);
+        display: initial;
+        flex: 1;
+    }
+
+    .nav-links li {
+        opacity: 1;
+    }
+
+    .nav-link {
+        padding: 25px;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    .link-ico {
+        font-size: 1.6rem;
+    }
+
+    .nav-link a:hover span {
+        color: var(--secondary-color);
+        transition: color 0.2s ease-in;
+    }
+
+    .music-item:hover {
+
+        height: 83px;
+    }
+
+    .timeline {
+        position: initial;
+        flex: 3;
+    }
+
+    .music-control {
+        display: flex;
+        flex: 4;
+        justify-content: flex-end;
+        margin: 0;
+    }
+
+    .msc-played {
+        flex: 2;
+    }
+
+    .ctrl-btns {
+        flex: 1;
+    }
+}

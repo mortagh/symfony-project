@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33.671" height="34.912" viewBox="0 0 33.671 34.912">
+  <g id="ic-media-collection" transform="translate(0.75 0.757)">
+    <path id="Tracé_10" data-name="Tracé 10" d="M14.51,2.68,3.232,6.844A.357.357,0,0,0,3,7.184V31.705a.322.322,0,0,0,.232.322l11.421,4a.357.357,0,0,0,.483-.34L14.993,3.02a.357.357,0,0,0-.483-.34Z" transform="translate(-3 -2.657)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+    <line id="Ligne_1" data-name="Ligne 1" y2="25.022" transform="translate(17.873 4.276)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_2" data-name="Ligne 2" y2="25.022" transform="translate(25.022 4.276)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_3" data-name="Ligne 3" y2="25.022" transform="translate(32.171 4.276)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>
