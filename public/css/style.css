@@ -465,7 +465,7 @@ main {
     grid-template-columns: repeat(auto-fill, 180px);
     width: 100%;
     max-width: 1400px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     grid-gap: 32px;
     grid-template-rows: repeat(auto-fill, minmax(135px, auto))
 }
