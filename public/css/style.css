@@ -257,7 +257,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 70px;
-    height: 70px;
+    height: 100%;
     position: relative;
 }
 
@@ -398,7 +398,63 @@ main {
     font-size: 30px;
 }
 
+
+/*------------Album section ------------*/
+
+.album-list {
+    display: grid;
+    max-width: 1300px;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    grid-template-columns: repeat(auto-fill, 350px);
+    justify-content: center;
+    grid-gap: 20px
+}
+
+.album-item {
+    display: flex;
+    gap: 10px;
+    margin: 10px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    height: 100px;
+}
+
+.cover-album {
+    height: 100%;
+    flex: 1;
+
+}
+
+.cover-album img {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.album-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.album-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.artist-title {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 @media only screen and (min-width: 968px) {
+
+    /*------------header ------------*/
     .header {
         height: 100vh;
         width: 20%;
@@ -421,6 +477,7 @@ main {
         display: none;
     }
 
+    /*------------Msuiques main ------------*/
     main {
         padding: 5vh 10px 0 calc(20% + 10px);
     }
@@ -460,6 +517,7 @@ main {
         height: 83px;
     }
 
+    /*------------player ctrl ------------*/
     .timeline {
         position: initial;
         flex: 3;
