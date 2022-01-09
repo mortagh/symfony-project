@@ -413,6 +413,7 @@ main {
 }
 
 .album-item {
+    cursor: pointer;
     display: flex;
     gap: 10px;
     margin: 10px auto;
@@ -421,12 +422,17 @@ main {
     height: 200px;
     border-radius: 5px;
     height: 100px;
+    transition: height 0.1s ease-in, box-shadow 0.1s ease-in;
+}
+
+.album-item:hover {
+    height: 105px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cover-album {
     height: 100%;
     flex: 1;
-
 }
 
 .cover-album img {
@@ -450,6 +456,51 @@ main {
 .artist-title {
     font-size: 1rem;
     font-weight: 400;
+}
+
+
+/*------------ Main artists ------------*/
+.artists-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    width: 100%;
+    max-width: 1400px;
+    justify-content: space-evenly;
+    grid-gap: 32px;
+    grid-template-rows: repeat(auto-fill, minmax(135px, auto))
+}
+
+.artist-it a {
+    color: var(--black-color);
+}
+
+.artist-it {
+    cursor: pointer;
+    padding: 23px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    transition: width 0.2s ease-in;
+    min-height: 217px;
+}
+
+.artist-it:hover {
+    width: 103%;
+}
+
+.artist-img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.artist-img img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.artist-name {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 @media only screen and (min-width: 968px) {
