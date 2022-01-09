@@ -90,6 +90,7 @@ function loadSong(song) {
     artistPlayed.innerText = song.artist
     audio.src = `musics/${song.title}.mp3`;
     coverPlayed.src = `img/covers/${song.title}.jpg`;
+    coverPlayed.src = `img/covers/${song.title}.jpg`;
 }
 // function changement du bouton play en pause et lancement de la musique
 function playSong() {

@@ -3,6 +3,25 @@
 {% block title %}Albums{% endblock %}
 
 {% block body %}
-
+<main>
+    <div class="search-header">
+        <label class="label-search" for="search"><i class="fas fa-search"></i>
+            <input type="text" name="search" id="search" placeholder="RECHERCHER">
+        </label>
+    </div>
+    <h1 class="page-title">
+        Albums
+    </h1>
+    <div class="album-list">
+        <div class="album-item">
+            <div class="cover">
+                <img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album">
+            </div>
+            <div class="album-info">
+                <span class="album-title">Crush</span>
+            </div>
+        </div>
+    </div>
+</main>
 
 {% endblock %}
