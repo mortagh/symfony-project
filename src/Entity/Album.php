@@ -62,12 +62,6 @@ class Album
         return $this;
     }
 
-    public function setContenue(string $contenue): self
-    {
-        $this->contenue = $contenue;
-
-        return $this;
-    }
 
     public function getDate(): ?\DateTimeInterface
     {
@@ -121,5 +115,8 @@ class Album
         }
 
         return $this;
+    }
+    public function __toString(){
+        return $this->nom;
     }
 }

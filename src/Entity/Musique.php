@@ -35,7 +35,7 @@ class Musique
 
     /**
      * @ORM\ManyToOne(targetEntity=Album::class, inversedBy="musique")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $album;
 
@@ -91,5 +91,8 @@ class Musique
         $this->album = $album;
 
         return $this;
+    }
+    public function __toString(){
+        return $this->nom;
     }
 }
