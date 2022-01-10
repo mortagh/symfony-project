@@ -21,8 +21,7 @@ class MusiqueCrudController extends AbstractCrudController
         return [
             TextField::new('nom'),
             AssociationField::new('artiste'),
-            DateTimeField::new('date')
         ];
     }
-
+   
 }

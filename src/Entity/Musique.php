@@ -5,8 +5,10 @@ namespace App\Entity;
 use App\Repository\MusiqueRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=MusiqueRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Musique
 {
@@ -38,6 +40,14 @@ class Musique
      * @ORM\JoinColumn(nullable=true)
      */
     private $album;
+   
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue(): void
+    {
+        $this->date = new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -95,4 +105,5 @@ class Musique
     public function __toString(){
         return $this->nom;
     }
+
 }

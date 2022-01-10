@@ -25,5 +25,6 @@ class ArtisteCrudController extends AbstractCrudController
             AssociationField::new('album'),
         ];
     }
+   
 
 }
