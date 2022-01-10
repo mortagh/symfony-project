@@ -25,11 +25,6 @@ class Album
     private $nom;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $contenue;
-
-    /**
      * @ORM\Column(type="date")
      */
     private $date;
@@ -65,11 +60,6 @@ class Album
         $this->nom = $nom;
 
         return $this;
-    }
-
-    public function getContenue(): ?string
-    {
-        return $this->contenue;
     }
 
     public function setContenue(string $contenue): self

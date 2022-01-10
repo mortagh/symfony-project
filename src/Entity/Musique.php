@@ -23,11 +23,6 @@ class Musique
     private $nom;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $contenue;
-
-    /**
      * @ORM\Column(type="date")
      */
     private $date;
@@ -61,17 +56,6 @@ class Musique
         return $this;
     }
 
-    public function getContenue(): ?string
-    {
-        return $this->contenue;
-    }
-
-    public function setContenue(string $contenue): self
-    {
-        $this->contenue = $contenue;
-
-        return $this;
-    }
 
     public function getDate(): ?\DateTimeInterface
     {
