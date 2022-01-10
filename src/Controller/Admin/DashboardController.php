@@ -36,6 +36,5 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Artiste', 'fas fa-list', Artiste::class);
         yield MenuItem::linkToCrud('Musique', 'fas fa-list', Musique::class);
 
-
     }
 }

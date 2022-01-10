@@ -4,12 +4,14 @@ namespace App\Controller\Admin;
 
 use App\Entity\Article;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
+
 class ArticleCrudController extends AbstractCrudController
 {
+
+
     public static function getEntityFqcn(): string
     {
         return Article::class;
@@ -22,8 +24,8 @@ class ArticleCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextEditorField::new('contenue'),
             TextField::new('auteur')
-
         ];
     }
+
 
 }
