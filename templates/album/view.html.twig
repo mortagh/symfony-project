@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Album{% endblock %}
+
+{% block body %}
+<main class="main-alb">
+    <div class="head-albm">
+        <div class="cover-alb">
+            <img src="{{asset('img/covers/fffff.jpg')}}" alt="album">
+        </div>
+        <div class="info-alb">
+            <h2>OG SAN</h2>
+            <span class="art-tag">Deen Burbigo</span>
+        </div>
+    </div>
+    <div class="musics-album">
+        <h1 class="page-title">
+            Musiques de l'artiste
+        </h1>
+        <div class="musics-list">
+            <div class="music-item">
+                <div class="music-cover music-cover-list">
+                    <img src="{{asset('img/covers/subzero.jpg')}}" alt="subzero-cover">
+                </div>
+                <div class="music-info">
+                    <div class="ctn-msc-info">
+                        <span class="music-title title-item">subzero</span>
+                        <a class="music-artist artist-item" href="https://127.0.0.1:8001/artiste/7">Ben Klock</a>
+                    </div>
+
+                </div>
+                <span class="album-name">Crush</span>
+                <div class="more-info">
+                    <span class="music-rating">4.5</span>
+                    <span class="music-duration">3:50</span>
+                </div>
+                <audio src="" id="audio"></audio>
+            </div>
+
+        </div>
+    </div>
+</main>
+{{ include('/_player.html.twig') }}
+
+
+
+
+{% endblock %}

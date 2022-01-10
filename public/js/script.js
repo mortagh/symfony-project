@@ -86,15 +86,15 @@ let indexOfMusic = musics.length - 1;
 
 //charger la musique(titre cover....)
 
-
+loadSong(musics[indexOfMusic]);
 //function onload pour charger la musique
 function loadSong(song) {
     titlePlayed.innerText = song.title
     artistPlayed.innerText = song.artist
-    audio.src = `musics/${song.title}.mp3`;
-    coverPlayed.src = `img/covers/${song.title}.jpg`;
+    audio.src = `https://127.0.0.1:8001/musics/${song.title}.mp3`;
+    coverPlayed.src = `https://127.0.0.1:8001/img/covers/${song.title}.jpg`;
 }
-loadSong(musics[indexOfMusic]);
+
 // function changement du bouton play en pause et lancement de la musique
 function playSong() {
     controlPanel.classList.add('play');

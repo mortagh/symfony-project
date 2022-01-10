@@ -14,6 +14,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    color: var(--black-color);
 }
 
 body {
@@ -306,18 +307,29 @@ main {
 .music-title {
     font-size: 1.5rem;
     font-weight: 500;
+
+}
+
+.album-name:hover,
+.music-artist:hover,
+.album-title:hover,
+.artist-title:hover {
+    color: var(--secondary-color);
 }
 
 .music-artist {
     padding: 0;
     font-size: 1rem;
     font-weight: 400;
+    color: var(--black-color);
+    transition: color 0.2s ease-in;
 }
 
 .album-name {
     font-size: 1.5rem;
     font-weight: 500;
     flex: 2;
+    transition: color 0.2s ease-in;
 }
 
 /* ----------panel-music-controll------------*/
@@ -462,11 +474,13 @@ main {
 .album-title {
     font-size: 1.5rem;
     font-weight: 500;
+    transition: color 0.1s ease-in;
 }
 
 .artist-title {
     font-size: 1rem;
     font-weight: 400;
+    transition: color 0.1s ease-in;
 }
 
 
@@ -476,7 +490,7 @@ main {
     grid-template-columns: repeat(auto-fill, 180px);
     width: 100%;
     max-width: 1400px;
-    justify-content: center;
+    justify-content: space-between;
     grid-gap: 32px;
 }
 
@@ -511,11 +525,102 @@ main {
 .artist-name {
     font-size: 1.2rem;
     font-weight: 500;
+    transition: color 0.2s ease-in;
+}
+
+.artist-name:hover {
+    color: var(--secondary-color);
 }
 
 .pge-album-arts {
     grid-column: 1/-1;
     height: 50px;
+
+}
+
+.album-artist {
+    margin-top: 50px;
+}
+
+/*------------artist(id) page ------------*/
+.cover-art {
+    min-width: 200px;
+    width: 280px;
+    border-radius: 5px;
+
+}
+
+.cover-art img {
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.head-art {
+    display: flex;
+    gap: 60px;
+    align-items: flex-end;
+
+}
+
+.info-art h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding-bottom: 40px;
+
+}
+
+.tags {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+.pge-album-arts {
+    height: 20px;
+    grid-column: 1/-1;
+
+}
+
+/*------album(id)-----*/
+.cover-alb {
+    min-width: 200px;
+    width: 280px;
+    border-radius: 5px;
+
+}
+
+.cover-alb img {
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.head-albm {
+    display: flex;
+    gap: 60px;
+    align-items: flex-end;
+
+}
+
+.info-alb h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding-bottom: 40px;
+
+}
+
+.art-tag {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+.pge-album-arts {
+    height: 20px;
+    grid-column: 1/-1;
 
 }
 
@@ -546,7 +651,7 @@ main {
 
     /*------------Msuiques main ------------*/
     main {
-        padding: 5vh 10px 0 calc(20% + 10px);
+        padding: 5vh 15px 0 calc(20% + 15px);
     }
 
     .nav-links {

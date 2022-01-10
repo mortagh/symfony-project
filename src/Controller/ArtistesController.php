@@ -18,7 +18,7 @@ class ArtistesController extends AbstractController
         ]);
     }
     /**
-     * @Route("/artistes/{id}", name="view_artiste")
+     * @Route("/artiste/{id}", name="view_artiste")
      */
     public function viewArtiste($id): Response
     {
