@@ -5,24 +5,27 @@
     <nav>
         <ul class="nav-links">
             <div class="container-li">
-                <li class="nav-link"><a class="link-header" href="{{ path('home') }}"><span
-                            class="link-ico icon-ico-home"></span>
+
+                <li class="nav-link"><a class="link-header {% if currentPage == '/home' %}clr-active-head{% endif %}"
+                        href="{{ path('home') }}"><span class="link-ico icon-ico-home"></span>
                         <span>Accueil</span></a>
                 </li>
-                <li class="nav-link"><a class="link-header" href="{{ path('musiques') }}"><span
-                            class="link-ico icon-ico-music"></span>
+                <li class="nav-link"><a
+                        class="link-header {% if currentPage == '/musiques' %}clr-active-head{% endif %}"
+                        href="{{ path('musiques') }}"><span class="link-ico icon-ico-music"></span>
                         <span>Musiques</span></a>
                 </li>
-                <li class="nav-link"><a class="link-header" href="{{ path('album') }}"><span
-                            class="link-ico icon-soundtracks"></span>
+                <li class="nav-link"><a class="link-header {% if currentPage == '/album' %}clr-active-head{% endif %}"
+                        href="{{ path('album') }}"><span class="link-ico icon-soundtracks"></span>
                         <span>Albums</span></a>
                 </li>
-                <li class="nav-link"><a class="link-header" href="{{ path('artistes') }}"><span
-                            class="link-ico icon-ico-artist"></span>
+                <li class="nav-link"><a
+                        class="link-header {% if currentPage == '/artistes' %}clr-active-head{% endif %}"
+                        href="{{ path('artistes') }}"><span class="link-ico icon-ico-artist"></span>
                         <span>Artists</span></a>
                 </li>
-                <li class="nav-link"><a class="link-header" href="{{ path('blog') }}"><span
-                            class="link-ico icon-ico-news"></span>
+                <li class="nav-link"><a class="link-header {% if currentPage == '/blog' %}clr-active-head{% endif %}"
+                        href="{{ path('blog') }}"><span class="link-ico icon-ico-news"></span>
                         <span>Actualités</span></a>
                 </li>
             </div>

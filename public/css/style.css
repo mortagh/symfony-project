@@ -14,7 +14,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    color: var(--black-color);
+
 }
 
 body {
@@ -23,6 +23,9 @@ body {
     font-family: var(--font);
 }
 
+a {
+    color: var(--black-color);
+}
 
 /* ---------- header -------*/
 .header {
@@ -426,7 +429,7 @@ main {
 
 .album-list {
     display: grid;
-    max-width: 1300px;
+    max-width: 1500px;
     width: 100%;
     height: auto;
     margin: 10px auto;
@@ -489,7 +492,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, 180px);
     width: 100%;
-    max-width: 1400px;
+    max-width: 1700px;
     justify-content: space-between;
     grid-gap: 32px;
 }
@@ -622,6 +625,10 @@ main {
     height: 20px;
     grid-column: 1/-1;
 
+}
+
+.clr-active-head {
+    color: var(--secondary-color) !important;
 }
 
 @media all and (min-width: 968px) {
