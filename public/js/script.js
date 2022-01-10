@@ -6,6 +6,7 @@ function burger_menu(param_insert) {
         nav_ul: '.nav-links',
         toggle_nav_ul: 'nav-active',
         nav_li: '.nav-links li',
+        filterBg: '.bckg-filter',
         toggleBurgerClassName: 'toggle'
     }
     if (typeof param_insert == 'object') {
@@ -20,12 +21,15 @@ function burger_menu(param_insert) {
 
     const burger = document.querySelector(param.burger_el),
         nav = document.querySelector(param.nav_ul),
-        navLinks = document.querySelectorAll(param.nav_li);
+        navLinks = document.querySelectorAll(param.nav_li),
+        filterB = document.querySelector(param.filterBg);
+
 
 
     //toggle nav
     burger.addEventListener('click', () => {
         nav.classList.toggle(param.toggle_nav_ul);
+        filterB.classList.toggle(param.toggle_nav_ul);
         // animate links
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
@@ -82,7 +86,6 @@ let indexOfMusic = musics.length - 1;
 
 //charger la musique(titre cover....)
 
-loadSong(musics[indexOfMusic]);
 
 //function onload pour charger la musique
 function loadSong(song) {
@@ -90,8 +93,8 @@ function loadSong(song) {
     artistPlayed.innerText = song.artist
     audio.src = `musics/${song.title}.mp3`;
     coverPlayed.src = `img/covers/${song.title}.jpg`;
-    coverPlayed.src = `img/covers/${song.title}.jpg`;
 }
+loadSong(musics[indexOfMusic]);
 // function changement du bouton play en pause et lancement de la musique
 function playSong() {
     controlPanel.classList.add('play');
@@ -115,7 +118,6 @@ function prevSong() {
     loadSong(musics[indexOfMusic]);
     playSong()
 }
-
 //btn suivant 
 function nextSong() {
     indexOfMusic++;
@@ -168,16 +170,11 @@ progressContainer.addEventListener('click', setProgress)
 audio.addEventListener('ended', nextSong)
 
 //pour chaque musique quand on click function anonyme
-musicItems.forEach((item) => {
+musicItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-        //boucle qui permet de trouver l'index de la musique et d'injecter l'index dans la fucntion onload
-        for (let i = 0; i < musics.length; i++) {
-            if (musics[i].title == item.parentElement.querySelector('.title-item').textContent) {
-                //condition pour l'index avec le titre de la musique cliqué
-                loadSong(musics[i]);
-                playSong()
-            }
-        }
-
+        //foreach qui lance la fonction loadsong avec l'index de l'élément cliqué dans l'ob musics
+        loadSong(musics[index]);
+        console.log(musics[index].title)
+        playSong()
     })
 });

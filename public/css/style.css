@@ -32,8 +32,22 @@ body {
     align-items: center;
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     background-color: white;
+    z-index: 3;
+}
+
+.bckg-filter {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
     z-index: 1;
+    background-color: white;
+    transition: transform 0.5s ease-in;
+    position: absolute;
 }
 
 .logo-symfony {
@@ -115,8 +129,6 @@ body {
     background-color: var(--bg-color);
     transform: translateX(-100%);
     transition: transform 0.5s ease-in;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px 0 0 0;
     padding: 0;
     height: calc(100vh - 10vh);
     z-index: 2;
@@ -311,7 +323,6 @@ main {
 /* ----------panel-music-controll------------*/
 .ctrl-panel {
     position: fixed;
-
     width: 100%;
     left: 0;
     right: 0;
@@ -324,7 +335,7 @@ main {
     background-color: white;
     display: flex;
     padding: 6.5px 10px;
-    min-height: 11vh;
+    height: 11vh;
 }
 
 .msc-played {
@@ -465,9 +476,8 @@ main {
     grid-template-columns: repeat(auto-fill, 180px);
     width: 100%;
     max-width: 1400px;
-    justify-content: space-between;
+    justify-content: center;
     grid-gap: 32px;
-    grid-template-rows: repeat(auto-fill, minmax(135px, auto))
 }
 
 .artist-it a {
@@ -481,7 +491,7 @@ main {
     width: 100%;
     border-radius: 5px;
     transition: width 0.2s ease-in;
-    min-height: 217px;
+    height: auto;
 }
 
 .artist-it:hover {
@@ -503,7 +513,13 @@ main {
     font-weight: 500;
 }
 
-@media only screen and (min-width: 968px) {
+.pge-album-arts {
+    grid-column: 1/-1;
+    height: 50px;
+
+}
+
+@media all and (min-width: 968px) {
 
     /*------------header ------------*/
     .header {
@@ -563,10 +579,6 @@ main {
         transition: color 0.2s ease-in;
     }
 
-    .music-item:hover {
-
-        height: 83px;
-    }
 
     /*------------player ctrl ------------*/
     .timeline {
