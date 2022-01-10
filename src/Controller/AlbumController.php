@@ -12,7 +12,7 @@ class AlbumController extends AbstractController
     /**
      * @Route("/album", name="album")
      */
-    public function index( Request $request): Response
+    public function index(Request $request): Response
     {
         $currentPage = $request->getPathInfo();
         return $this->render('album/index.html.twig', [
@@ -25,7 +25,7 @@ class AlbumController extends AbstractController
     public function viewAlbum($id): Response
     {
         return $this->render('album/view.html.twig', [
-            'controller_name' => 'albumController',
+            'currentPage' => 'FFFF',
         ]);
     }
 }

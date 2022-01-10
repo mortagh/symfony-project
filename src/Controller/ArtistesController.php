@@ -25,7 +25,7 @@ class ArtistesController extends AbstractController
     public function viewArtiste($id): Response
     {
         return $this->render('artistes/view.html.twig', [
-            'controller_name' => 'ArtistesController',
+            'currentPage' => '',
         ]);
     }
 }
