@@ -6,17 +6,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\AlbumRepository;
 
 class AlbumController extends AbstractController
 {
     /**
      * @Route("/album", name="album")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, AlbumRepository $albumRepository): Response
     {
         $currentPage = $request->getPathInfo();
+        $albums = $albumRepository->findBy([],['id'=>'DESC']);
         return $this->render('album/index.html.twig', [
             'currentPage' => $currentPage,
+            'albums'=> $albums,
         ]);
     }
     /**
