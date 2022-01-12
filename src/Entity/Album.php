@@ -10,7 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=AlbumRepository::class)
  * @ORM\HasLifecycleCallbacks()
- * 
  */
 class Album
 {
@@ -45,11 +44,11 @@ class Album
     /**
      * @ORM\PrePersist
      */
-    public function setCreatedAtValue(): void
+    public function setDateValue(): void
     {
         $this->date = new \DateTimeImmutable();
     }
-    
+
     public function __construct()
     {
         $this->musique = new ArrayCollection();

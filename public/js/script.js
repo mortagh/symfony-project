@@ -91,8 +91,8 @@ loadSong(musics[indexOfMusic]);
 function loadSong(song) {
     titlePlayed.innerText = song.title
     artistPlayed.innerText = song.artist
-    audio.src = `https://127.0.0.1:8001/musics/${song.title}.mp3`;
-    coverPlayed.src = `https://127.0.0.1:8001/img/covers/${song.title}.jpg`;
+    audio.src = `http://127.0.0.1:8000/musics/${song.title}.mp3`;
+    coverPlayed.src = `http://127.0.0.1:8000/img/covers/${song.title}.jpg`;
 }
 
 // function changement du bouton play en pause et lancement de la musique

@@ -8,7 +8,6 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  * @ORM\HasLifecycleCallbacks()
- 
  */
 class Article
 {
@@ -39,10 +38,12 @@ class Article
      */
     private $nom;
 
-   /**
+    /*  GESTION DE L'AUTO INCREMENT DE LA DATE   */
+
+    /**
      * @ORM\PrePersist
      */
-    public function setCreatedAtValue(): void
+    public function setDateValue(): void
     {
         $this->date = new \DateTimeImmutable();
     }

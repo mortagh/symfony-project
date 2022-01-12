@@ -12,86 +12,17 @@
 
     <div class="artists-list">
         <h1 class="page-title pge-album-arts">
-            Artists
+            Artistes
         </h1>
+        {% for artiste in artistes %}
         <div class="artist-it">
             <a href="https://127.0.0.1:8000/artiste/7">
                 <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
+                <span class="artist-name">{{ artiste.nom }}</span>
             </a>
         </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
-        <div class="artist-it">
-            <a href="https://127.0.0.1:8000/artiste/7">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
-                <span class="artist-name">Peggy-Gou</span>
-            </a>
-        </div>
+        {% endfor %}
+
 
     </div>
 </main>

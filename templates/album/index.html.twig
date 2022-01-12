@@ -14,70 +14,15 @@
         <h1 class="page-title pge-album-arts">
             Albums
         </h1>
+        {% for album in albums%}
         <div class="album-item">
             <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
             <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
+                <a class="album-title" href="https://127.0.0.1:8000/album/7">{{ album.nom }}</a>
+                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">{{ album.artiste }}</a>
             </div>
         </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-        <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="https://127.0.0.1:8000/album/7">Crush</a>
-                <a class="artist-title" href="https://127.0.0.1:8000/artiste/7">Floating Point</a>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 </main>
 

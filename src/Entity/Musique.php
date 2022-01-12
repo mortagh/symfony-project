@@ -49,6 +49,14 @@ class Musique
         $this->date = new \DateTimeImmutable();
     }
 
+    /**
+     * @ORM\PrePersist
+     */
+    public function setDateValue(): void
+    {
+        $this->date = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
