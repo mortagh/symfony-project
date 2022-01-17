@@ -4,12 +4,16 @@ namespace App\Entity;
 
 use App\Repository\MusiqueRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=MusiqueRepository::class)
- * @ORM\HasLifecycleCallbacks()
+ * @ORM\Entity
+ * @Vich\Uploadable
  */
+
 class Musique
 {
     /**
@@ -40,6 +44,15 @@ class Musique
      * @ORM\JoinColumn(nullable=true)
      */
     private $album;
+
+    private $file;
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Vich\UploadableField(mapping="musique_images", fileNameProperty="file")
+     * @var File
+     */
+    
+    private $imageFile;
    
     /**
      * @ORM\PrePersist
@@ -114,4 +127,32 @@ class Musique
         return $this->nom;
     }
 
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
 }
