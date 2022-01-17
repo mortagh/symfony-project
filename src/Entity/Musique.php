@@ -45,9 +45,13 @@ class Musique
      */
     private $album;
 
-    private $file;
     /**
      * @ORM\Column(type="string", length=255)
+     */
+
+    private $file;
+
+    /**
      * @Vich\UploadableField(mapping="musique_images", fileNameProperty="file")
      * @var File
      */

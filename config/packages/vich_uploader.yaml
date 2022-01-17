@@ -1,8 +1,9 @@
+# config/packages/vich_uploader.yaml or app/config/config.yml
 vich_uploader:
     db_driver: orm
 
     mappings:
-        musique_image:
+        musique_images:
             uri_prefix: '%musique_images%'
             upload_destination: '%kernel.project_dir%/public%musique_images%'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

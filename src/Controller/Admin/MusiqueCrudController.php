@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class MusiqueCrudController extends AbstractCrudController
 {
@@ -22,7 +23,7 @@ class MusiqueCrudController extends AbstractCrudController
             TextField::new('nom'),
             AssociationField::new('artiste'),
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
-            ImageField::new('file')->setBasePath('/uploads/musiques')->onlyWhenCreating()
+            ImageField::new('file')->setBasePath('/uploads/musiques')->onlyOnIndex()
         ];
     }
 
