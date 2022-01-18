@@ -5,10 +5,13 @@ namespace App\Entity;
 use App\Repository\ArtisteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ArtisteRepository::class)
+ * @Vich\Uploadable
  */
 class Artiste
 {
@@ -38,6 +41,17 @@ class Artiste
      * @ORM\OneToMany(targetEntity=Musique::class, mappedBy="artiste")
      */
     private $musique;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $file;
+
+    /**
+     * @Vich\UploadableField(mapping="musique_images", fileNameProperty="file")
+     * @var File
+     */
+    private $imageFile;
 
     public function __construct()
     {
@@ -133,8 +147,38 @@ class Artiste
 
         return $this;
     }
+
     public function __toString(){
         return $this->nom;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 
 }

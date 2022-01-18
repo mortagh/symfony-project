@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\Album;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class AlbumCrudController extends AbstractCrudController
 {
@@ -18,8 +20,10 @@ class AlbumCrudController extends AbstractCrudController
     {
         return [
             TextField::new('nom'),
-            AssociationField::new('musique'),
-            AssociationField::new('artiste')
+            AssociationField::new('musique')->onlyOnIndex(),
+            AssociationField::new('artiste'),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            ImageField::new('file')->setBasePath('/uploads/albums')->onlyOnIndex()
         ];
     }
     

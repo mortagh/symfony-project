@@ -12,8 +12,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  * @ORM\Entity(repositoryClass=MusiqueRepository::class)
  * @ORM\Entity
  * @Vich\Uploadable
+ * @ORM\HasLifecycleCallbacks()
  */
-
 class Musique
 {
     /**
@@ -48,28 +48,18 @@ class Musique
     /**
      * @ORM\Column(type="string", length=255)
      */
-
     private $file;
 
     /**
      * @Vich\UploadableField(mapping="musique_images", fileNameProperty="file")
      * @var File
      */
-    
     private $imageFile;
    
     /**
      * @ORM\PrePersist
      */
     public function setCreatedAtValue(): void
-    {
-        $this->date = new \DateTimeImmutable();
-    }
-
-    /**
-     * @ORM\PrePersist
-     */
-    public function setDateValue(): void
     {
         $this->date = new \DateTimeImmutable();
     }
