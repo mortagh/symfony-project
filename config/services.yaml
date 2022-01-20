@@ -4,7 +4,11 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    musique_images: /uploads/musiques
+    musique_images: /uploads/musiqueImages
+    artist_images: /uploads/artistImages
+    album_images: /uploads/albumImages
+    music_file: /uploads/musicFiles
+    article_images: /uploads/articleImage
 services:
     # default configuration for services in *this* file
     _defaults:

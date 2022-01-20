@@ -1,19 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BlogController!{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block body %}
-    <h1>Articles</h1>
-    <main>
-        <div class="search-header">
-            <label class="label-search" for="search"><i class="fas fa-search"></i>
-                <input type="text" name="search" id="search" placeholder="RECHERCHER">
-            </label>
-        </div>
-        {% for article in articles%}
-            <a href="{{ path('view_article',{'id': article.id} )}}">{{ article.nom }}</a>
-            <p>{{ article.contenue }}</p>
-        {% endfor %}
-    </main>
+<main>
+    <div class="search-header">
+        <label class="label-search" for="search"><i class="fas fa-search"></i>
+            <input type="text" name="search" id="search" placeholder="RECHERCHER">
+        </label>
+    </div>
 
+    <div class="articles-list">
+        <h1 class="page-title pge-articles">
+            Articles
+        </h1>
+        <div class="article-item">
+            <a href="" class="arcl-img"><img src="" alt="image-article"></a>
+            <div class="info-article">
+                <a href="" class="arcl-img">
+                    <h3 class="ttl-article"></h3>
+                </a>
+                <div class="rsm-article"></div>
+                <div class="art-pub-tag">
+                    <span class="author-name"></span>
+                    <span class="date-post"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}

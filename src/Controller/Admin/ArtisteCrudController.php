@@ -26,7 +26,7 @@ class ArtisteCrudController extends AbstractCrudController
             AssociationField::new('musique')->onlyOnIndex(),
             AssociationField::new('album')->onlyOnIndex(),
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
-            ImageField::new('file')->setBasePath('/uploads/musiques')->onlyOnIndex()
+            ImageField::new('file')->setBasePath('/uploads/artistImages/')->onlyOnIndex()
         ];
     }
    

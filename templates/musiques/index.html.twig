@@ -3,39 +3,41 @@
 {% block title %}Musiques{% endblock %}
 
 {% block body %}
-    <main>
-        <div class="search-header">
-            <label class="label-search" for="search"><i class="fas fa-search"></i>
-                <input type="text" name="search" id="search" placeholder="RECHERCHER">
-            </label>
-        </div>
-        <h1 class="page-title">
-            Bibliothèque musicale
-        </h1>
+<main>
+    <div class="search-header">
+        <label class="label-search" for="search"><i class="fas fa-search"></i>
+            <input type="text" name="search" id="search" placeholder="RECHERCHER">
+        </label>
+    </div>
+    <h1 class="page-title">
+        Bibliothèque musicale
+    </h1>
+    <audio src="" id="audio"></audio>
+
+    <div class="musics-list">
         {% for musique in musiques %}
-        <div class="musics-list">
-            <div class="music-item">
-                <div class="music-cover music-cover-list">
-                    <img src="{{ asset('img/covers/subzero.jpg') }}" alt="subzero-cover">
-                </div>
-                <div class="music-info">
-                    <div class="ctn-msc-info">
-                        <span class="music-title title-item">{{ musique.nom }}</span>
-                        <a class="music-artist artist-item" href={{ path('view_artiste', {'id':musique.artiste.id}) }}>{{ musique.artiste }}</a>
-                    </div>
-
-                </div>
-                <a class="album-name" href={{ path('view_album', {'id':musique.album.id}) }}>{{ musique.album }}</a>
-                <div class="more-info">
-                    <span class="music-rating">4.5</span>
-                    <span class="music-duration">3:50</span>
-                </div>
-                <audio src="" id="audio"></audio>
+        <div class="music-item">
+            <div class="music-cover music-cover-list">
+                <img src="{{ asset('img/covers/subzero.jpg') }}" alt="subzero-cover">
             </div>
+            <div class="music-info">
+                <div class="ctn-msc-info">
+                    <span class="music-title title-item">{{ musique.nom }}</span>
+                    <a class="music-artist artist-item"
+                        href={{ path('view_artiste', {'id':musique.artiste.id}) }}>{{ musique.artiste }}</a>
+                    <span class="src-audio"></span>
+                </div>
 
+            </div>
+            <a class="album-name" href={{ path('view_album', {'id':musique.album.id}) }}>{{ musique.album }}</a>
+            <div class="more-info">
+                <span class="music-rating">4.5</span>
+                <span class="music-duration">3:50</span>
+            </div>
         </div>
         {% endfor %}
-    </main>
-    {{ include('/_player.html.twig') }}
+    </div>
+</main>
+{{ include('/_player.html.twig') }}
 
 {% endblock %}

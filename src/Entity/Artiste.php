@@ -48,7 +48,7 @@ class Artiste
     private $file;
 
     /**
-     * @Vich\UploadableField(mapping="musique_images", fileNameProperty="file")
+     * @Vich\UploadableField(mapping="artist_images", fileNameProperty="file")
      * @var File
      */
     private $imageFile;

@@ -50,7 +50,7 @@ class Album
     private $file;
 
     /**
-     * @Vich\UploadableField(mapping="musique_images", fileNameProperty="file")
+     * @Vich\UploadableField(mapping="album_images", fileNameProperty="file")
      * @var File
      */
     private $imageFile;

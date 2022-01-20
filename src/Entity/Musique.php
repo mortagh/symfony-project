@@ -8,6 +8,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+
 /**
  * @ORM\Entity(repositoryClass=MusiqueRepository::class)
  * @ORM\Entity
@@ -55,7 +56,19 @@ class Musique
      * @var File
      */
     private $imageFile;
-   
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $fileM;
+    
+      /**
+     * @Vich\UploadableField(mapping="music_file", fileNameProperty="fileM")
+     * @var File
+     */
+    private $audioFile;
+
+
     /**
      * @ORM\PrePersist
      */
@@ -148,5 +161,31 @@ class Musique
     public function getImageFile()
     {
         return $this->imageFile;
+    }
+
+    public function getFileM(): ?string
+    {
+        return $this->fileM;
+    }
+
+    public function setFileM(string $fileM): self
+    {
+        $this->fileM = $fileM;
+
+        return $this;
+    }
+    public function setAudioFile(?File $audioFile = null): void
+    {
+    $this->audioFile = $audioFile;
+    if (null !== $audioFile) {
+        // It is required that at least one field changes if you are using doctrine
+        // otherwise the event listeners won't be called and the file is lost
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+    }
+
+    public function getAudioFile(): ?File
+    {
+    return $this->audioFile;
     }
 }
