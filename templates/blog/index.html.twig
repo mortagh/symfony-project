@@ -11,7 +11,7 @@
             </label>
         </div>
         {% for article in articles%}
-            <h2>{{ article.nom }}</h2>
+            <a href="{{ path('view_article',{'id': article.id} )}}">{{ article.nom }}</a>
             <p>{{ article.contenue }}</p>
         {% endfor %}
     </main>
