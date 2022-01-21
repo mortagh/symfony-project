@@ -14,19 +14,21 @@
         <h1 class="page-title pge-articles">
             Articles
         </h1>
+        {% for article in articles %}
         <div class="article-item">
-            <a href="" class="arcl-img"><img src="{{vich_uploader_asset(blog,'imageFile')}}" alt="image-article"></a>
+            <a href="{{ path('view_article',{'id': article.id} )}}" class="arcl-img"><img src="{{vich_uploader_asset(article,'imageFile')}}" alt="image-article"></a>
             <div class="info-article">
-                <a href="" class="arcl-img">
-                    <h3 class="ttl-article"></h3>
+                <a href="{{ path('view_article',{'id': article.id} )}}" class="arcl-img">
+                    <h3 class="ttl-article"> {{ article.nom }} </h3>
                 </a>
-                <div class="rsm-article"></div>
+                <div class="rsm-article">{{ article.contenue }}</div>
                 <div class="art-pub-tag">
-                    <span class="author-name"></span>
-                    <span class="date-post"></span>
+                    <span class="author-name">{{ article.auteur }}</span>
+                    <span class="date-post">{{ article.date|date("d/m/Y") }}</span>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </main>
 {% endblock %}

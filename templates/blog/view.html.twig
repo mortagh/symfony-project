@@ -6,16 +6,16 @@
 <main>
     <div class="article">
         <div class="header-article">
-            <div class="article-img"><img src="" alt="image-article">
+            <div class="article-img"><img src="{{vich_uploader_asset(article,'imageFile')}}" alt="image-article">
             </div>
             <div class="info-artcl">
-                <h3 class="title-artc"></h3>
-                <span class="author-artc"></span>
-                <span class="date-pub"></span>
+                <h3 class="title-artc">{{ article.nom }}</h3>
+                <span class="author-artc">{{ article.auteur }}</span>
+                <span class="date-pub">{{ article.date|date("d/m/Y") }}</span>
             </div>
         </div>
         <div class="content">
-            <p></p>
+            <p>{{ article.contenue }}</p>
         </div>
     </div>
 </main>
