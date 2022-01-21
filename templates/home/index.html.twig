@@ -15,10 +15,10 @@
         </h1>
         {% for album in albums|slice(0, 6) %}
         <div class="album-item">
-            <a class="cover-album" href="#"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
+            <a class="cover-album" href="{{ path('view_album',{'id': album.id} )}}"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
             <div class="album-info">
-                <a class="album-title" href="#">{{album.nom}}</a>
-                <a class="artist-title" href="#">{{album.artiste}}</a>
+                <a class="album-title" href="{{ path('view_album',{'id': album.id} )}}">{{album.nom}}</a>
+                <a class="artist-title" href="{{ path('view_artiste',{'id': album.artiste.id} )}}">{{album.artiste}}</a>
             </div>
         </div>
         {% endfor %}
