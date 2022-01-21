@@ -24,12 +24,12 @@
                 <div class="ctn-msc-info">
                     <span class="music-title title-item">{{ musique.nom }}</span>
                     <a class="music-artist artist-item"
-                        href={{ path('view_artiste', {'id':musique.artiste.id}) }}>{{ musique.artiste }}</a>
-                    <span class="src-audio"></span>
+                        href="{{ path('view_artiste', {'id':musique.artiste.id}) }}">{{ musique.artiste }}</a>
+                    <span class="src-audio">{{vich_uploader_asset(musique,'audioFile')}}</span>
                 </div>
 
             </div>
-            <a class="album-name" href={{ path('view_album', {'id':musique.album.id}) }}>{{ musique.album }}</a>
+            <a class="album-name" href="{{ path('view_album', {'id':musique.album.id}) }}">{{ musique.album }}</a>
             <div class="more-info">
                 <span class="music-rating">4.5</span>
                 <span class="music-duration">3:50</span>
