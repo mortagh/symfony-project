@@ -25,10 +25,12 @@ class ArtistesController extends AbstractController
     /**
      * @Route("/artiste/{id}", name="view_artiste")
      */
-    public function viewArtiste($id): Response
+    public function viewArtiste(Request $request, ArtisteRepository $artisteRepository,$id): Response
     {
+        $artiste = $artisteRepository->find($id);
         return $this->render('artistes/view.html.twig', [
             'currentPage' => '',
+            'artiste' => $artiste,
         ]);
     }
 }

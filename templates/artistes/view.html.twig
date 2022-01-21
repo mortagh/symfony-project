@@ -6,10 +6,10 @@
 <main class="main-artist">
     <div class="head-art">
         <div class="cover-art">
-            <img src="{{asset('uploads/artists/')}}{{artist.fileA}}" alt="album">
+            <img src="{{vich_uploader_asset(artiste,'imageFile')}}">
         </div>
         <div class="info-art">
-            <h2>{{artist.name}}</h2>
+            <h2>{{artiste.nom}}</h2>
             <span class="tags">#techno</span>
         </div>
     </div>
@@ -19,20 +19,20 @@
         </h1>
         <div class="musics-list">
             <audio src="" id="audio"></audio>
-            {%for music in artist.musics%}
+            {%for musique in artiste.musique %}
             <div class="music-item">
                 <div class="music-cover music-cover-list">
-                    <img src="{{asset('uploads/covers/')}}{{music.album.file}}" alt="cover">
+                    <img src="{{vich_uploader_asset(musique,'imageFile')}}" alt="cover">
                 </div>
                 <div class="music-info">
                     <div class="ctn-msc-info">
-                        <span class="music-title title-item">{{music.titleM}}</span>
-                        <span class="music-artist artist-item">{{artist.name}}</span>
+                        <span class="music-title title-item">{{ musique.nom}}</span>
+                        <span class="music-artist artist-item">{{artiste.nom}}</span>
                     </div>
-                    <span class="src-audio">{{asset('uploads/audios/')}}{{music.fileM}}</span>
+                    <span class="src-audio">{{vich_uploader_asset(musique,'audioFile')}}</span>
                 </div>
                 <a class="album-name"
-                    href="{{ path('view_album', {'slug': music.album.slug, id: music.album.id }) }}">{{music.album.title}}</a>
+                    href="{{ path('view_album', {id: musique.album.id }) }}">{{musique.album.nom}}</a>
 
                 <div class="more-info">
                     <span class="music-rating">4.5</span>
@@ -48,14 +48,14 @@
         <h1 class="page-title pge-album-arts">
             Albums
         </h1>
-        {%for album in artist.albums%}
+        {%for album in artiste.album %}
         <div class="album-item">
-            <a class="cover-album" href="{{ path('view_album', {'slug': album.slug, id: album.id }) }}"><img
-                    src="{{asset('uploads/covers/')}}{{album.file}}" alt="cover album"></a>
+            <a class="cover-album" href="{{ path('view_album', {id: album.id }) }}"><img
+                    src="{{vich_uploader_asset(album,'imageFile')}}" alt="cover album"></a>
             <div class="album-info">
                 <a class="album-title"
-                    href="{{ path('view_album', {'slug': album.slug, id: album.id }) }}">{{album.title}}</a>
-                <span class="artist-title">{{album.artist}}</span>
+                    href="{{ path('view_album', { id: album.id }) }}">{{album.nom}}</a>
+                <span class="artist-title">{{album.artiste}}</span>
             </div>
         </div>
         {% endfor %}
