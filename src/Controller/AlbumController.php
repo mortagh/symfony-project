@@ -25,10 +25,12 @@ class AlbumController extends AbstractController
     /**
      * @Route("/album/{id}", name="view_album")
      */
-    public function viewAlbum($id): Response
+    public function viewAlbum($id, Request $request, AlbumRepository $albumRepository): Response
     {
+        $album = $albumRepository->find($id);
         return $this->render('album/view.html.twig', [
             'currentPage' => 'FFFF',
+            'album'=> $album,
         ]);
     }
 }
