@@ -18,7 +18,7 @@
         {% for musique in musiques %}
         <div class="music-item">
             <div class="music-cover music-cover-list">
-                <img src="{{ asset('img/covers/subzero.jpg') }}" alt="subzero-cover">
+                <img src="{{vich_uploader_asset(musique,'imageFile')}}" alt="subzero-cover">
             </div>
             <div class="music-info">
                 <div class="ctn-msc-info">

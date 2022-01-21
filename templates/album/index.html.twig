@@ -16,10 +16,10 @@
         </h1>
         {% for album in albums%}
         <div class="album-item">
-            <a class="cover-album" href="{{ path('view_album',{'id': album.id} )}}"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
+            <a class="cover-album" href="{{ path('view_album',{'id': album.id} )}}"><img src="{{vich_uploader_asset(album,'imageFile')}}" alt="cover album"></a>
             <div class="album-info">
                 <a class="album-title" href="{{ path('view_album',{'id': album.id} )}}">{{ album.nom }}</a>
-                <a class="artist-title" href={{ path('view_artiste', {'id':album.artiste.id}) }}>{{ album.artiste }}</a>
+                <a class="artist-title" href="{{ path('view_artiste', {'id':album.artiste.id}) }}">{{ album.artiste }}</a>
             </div>
         </div>
         {% endfor %}

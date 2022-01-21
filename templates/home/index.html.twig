@@ -15,7 +15,7 @@
         </h1>
         {% for album in albums|slice(0, 6) %}
         <div class="album-item">
-            <a class="cover-album" href="{{ path('view_album',{'id': album.id} )}}"><img src="{{asset('img/covers/subzero.jpg')}}" alt="cover album"></a>
+            <a class="cover-album" href="{{ path('view_album',{'id': album.id} )}}"><img src="{{vich_uploader_asset(album,'imageFile')}}" alt="cover album"></a>
             <div class="album-info">
                 <a class="album-title" href="{{ path('view_album',{'id': album.id} )}}">{{album.nom}}</a>
                 <a class="artist-title" href="{{ path('view_artiste',{'id': album.artiste.id} )}}">{{album.artiste}}</a>
@@ -30,7 +30,7 @@
         {% for artiste in artistes|slice(0, 6) %}
         <div class="artist-it">
             <a href="{{ path('view_artiste',{'id': artiste.id} )}}">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
+                <div class="artist-img"><img src="{{vich_uploader_asset(artiste,'imageFile')}}" alt=""></div>
                 <span class="artist-name">{{artiste.nom}}</span>
             </a>
         </div>
@@ -43,7 +43,7 @@
         {% for musique in musiques |slice(0, 5) %}
         <div class="music-item">
             <div class="music-cover music-cover-list">
-                <img src="{{asset('img/covers/subzero.jpg')}}" alt="subzero-cover">
+                <img src="{{vich_uploader_asset(musique,'imageFile')}}" alt="subzero-cover">
             </div>
             <div class="music-info">
                 <div class="ctn-msc-info">

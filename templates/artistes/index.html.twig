@@ -17,7 +17,7 @@
         {% for artiste in artistes %}
         <div class="artist-it">
             <a href="{{ path('view_artiste',{'id': artiste.id} )}}">
-                <div class="artist-img"><img src="{{asset('img/artists/peggy-gou.jpg')}}" alt=""></div>
+                <div class="artist-img"><img src="{{vich_uploader_asset(artiste,'imageFile')}}" alt=""></div>
                 <span class="artist-name">{{ artiste.nom }}</span>
             </a>
         </div>
