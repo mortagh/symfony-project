@@ -43,7 +43,7 @@
         {% for musique in musiques |slice(0, 5) %}
         <div class="music-item">
             <div class="music-cover music-cover-list">
-                <img src="{{vich_uploader_asset(musique,'imageFile')}}" alt="subzero-cover">
+                <img src="{{vich_uploader_asset(musique.album,'imageFile')}}" alt="subzero-cover">
             </div>
             <div class="music-info">
                 <div class="ctn-msc-info">
