@@ -18,6 +18,7 @@
             Musiques de l'artiste
         </h1>
         <div class="musics-list">
+            <audio src="" id="audio"></audio>
             {% for musique in album.musique %}
             <div class="music-item">
                 <div class="music-cover music-cover-list">
@@ -26,7 +27,9 @@
                 <div class="music-info">
                     <div class="ctn-msc-info">
                         <span class="music-title title-item">{{ musique.nom }}</span>
-                        <a class="music-artist artist-item" href="{{ path('view_artiste', {id: musique.artiste.id }) }}">{{ album.artiste.nom }}</a>
+                        <a class="music-artist artist-item"
+                            href="{{ path('view_artiste', {id: musique.artiste.id }) }}">{{ album.artiste.nom }}</a>
+                        <span class="src-audio">{{vich_uploader_asset(musique,'audioFile')}}</span>
                     </div>
 
                 </div>
@@ -35,7 +38,7 @@
                     <span class="music-rating">4.5</span>
                     <span class="music-duration">3:50</span>
                 </div>
-                <audio src="" id="audio"></audio>
+
             </div>
             {%endfor%}
 

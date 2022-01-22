@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Artist{% endblock %}
+{% block title %}Artiste{% endblock %}
 
 {% block body %}
 <main class="main-artist">
@@ -22,7 +22,7 @@
             {%for musique in artiste.musique %}
             <div class="music-item">
                 <div class="music-cover music-cover-list">
-                    <img src="{{vich_uploader_asset(musique,'imageFile')}}" alt="cover">
+                    <img src="{{vich_uploader_asset(musique.album,'imageFile')}}" alt="cover">
                 </div>
                 <div class="music-info">
                     <div class="ctn-msc-info">
@@ -31,8 +31,7 @@
                     </div>
                     <span class="src-audio">{{vich_uploader_asset(musique,'audioFile')}}</span>
                 </div>
-                <a class="album-name"
-                    href="{{ path('view_album', {id: musique.album.id }) }}">{{musique.album.nom}}</a>
+                <a class="album-name" href="{{ path('view_album', {id: musique.album.id }) }}">{{musique.album.nom}}</a>
 
                 <div class="more-info">
                     <span class="music-rating">4.5</span>
@@ -53,8 +52,7 @@
             <a class="cover-album" href="{{ path('view_album', {id: album.id }) }}"><img
                     src="{{vich_uploader_asset(album,'imageFile')}}" alt="cover album"></a>
             <div class="album-info">
-                <a class="album-title"
-                    href="{{ path('view_album', { id: album.id }) }}">{{album.nom}}</a>
+                <a class="album-title" href="{{ path('view_album', { id: album.id }) }}">{{album.nom}}</a>
                 <span class="artist-title">{{album.artiste}}</span>
             </div>
         </div>

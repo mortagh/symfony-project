@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 <main>
@@ -9,58 +9,107 @@
             <input type="text" name="search" id="search" placeholder="RECHERCHER">
         </label>
     </div>
-    <div class="album-list">
-        <h1 class="page-title pge-album-arts">
-            Albums
+    <div class="articles-list">
+        <h1 class="page-title pge-articles">
+            L'article du moment
         </h1>
-        {% for album in albums|slice(0, 6) %}
-        <div class="album-item">
-            <a class="cover-album" href="{{ path('view_album',{'id': album.id} )}}"><img src="{{vich_uploader_asset(album,'imageFile')}}" alt="cover album"></a>
-            <div class="album-info">
-                <a class="album-title" href="{{ path('view_album',{'id': album.id} )}}">{{album.nom}}</a>
-                <a class="artist-title" href="{{ path('view_artiste',{'id': album.artiste.id} )}}">{{album.artiste}}</a>
+        {% for article in articles|slice(0, 1)%}
+        <div class="article-item">
+            <a href="{{ path('view_article',{'id': article.id} )}}" class="arcl-img"><img
+                    src="{{vich_uploader_asset(article,'imageFile')}}" alt="image-article"></a>
+            <div class="info-article">
+                <a href="{{ path('view_article',{'id': article.id} )}}" class="arcl-img">
+                    <h3 class="ttl-article"> {{ article.nom }} </h3>
+                </a>
+                <div class="rsm-article">{{ article.contenue }}</div>
+                <div class="art-pub-tag">
+                    <span class="author-name">{{ article.auteur }}</span>
+                    <span class="date-post">{{ article.date|date("d/m/Y") }}</span>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
     <div class="artists-list">
         <h1 class="page-title pge-album-arts">
-            Artists
+            Artistes
         </h1>
-        {% for artiste in artistes|slice(0, 6) %}
+        {% for artiste in artistes |slice(0, 6)%}
         <div class="artist-it">
             <a href="{{ path('view_artiste',{'id': artiste.id} )}}">
                 <div class="artist-img"><img src="{{vich_uploader_asset(artiste,'imageFile')}}" alt=""></div>
-                <span class="artist-name">{{artiste.nom}}</span>
+                <span class="artist-name">{{ artiste.nom }}</span>
             </a>
         </div>
         {% endfor %}
+
     </div>
     <h1 class="page-title">
         Bibliothèque musicale
     </h1>
+
+
     <div class="musics-list">
-        {% for musique in musiques |slice(0, 5) %}
+        <audio src="" id="audio"></audio>
+        {% for musique in musiques %}
         <div class="music-item">
             <div class="music-cover music-cover-list">
                 <img src="{{vich_uploader_asset(musique.album,'imageFile')}}" alt="subzero-cover">
             </div>
             <div class="music-info">
                 <div class="ctn-msc-info">
-                    <span class="music-title title-item">{{musique.nom}}</span>
-                    <a class="music-artist artist-item" href="https://127.0.0.1:8000/artiste/7">{{musique.artiste}}</a>
+                    <span class="music-title title-item">{{ musique.nom }}</span>
+                    <a class="music-artist artist-item"
+                        href="{{ path('view_artiste', {'id':musique.artiste.id}) }}">{{ musique.artiste }}</a>
+                    <span class="src-audio">{{vich_uploader_asset(musique,'audioFile')}}</span>
                 </div>
 
             </div>
-            <a class="album-name" href="https://127.0.0.1:8000/album/7">{{musique.album}}</a>
+            <a class="album-name" href="{{ path('view_album', {'id':musique.album.id}) }}">{{ musique.album }}</a>
             <div class="more-info">
                 <span class="music-rating">4.5</span>
                 <span class="music-duration">3:50</span>
             </div>
-            <audio src="" id="audio"></audio>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="album-list">
+        <h1 class="page-title pge-album-arts">
+            Albums
+        </h1>
+        {% for album in albums |slice(0, 5)%}
+        <div class="album-item">
+            <a class="cover-album" href="{{ path('view_album',{'id': album.id} )}}"><img
+                    src="{{vich_uploader_asset(album,'imageFile')}}" alt="cover album"></a>
+            <div class="album-info">
+                <a class="album-title" href="{{ path('view_album',{'id': album.id} )}}">{{ album.nom }}</a>
+                <a class="artist-title"
+                    href="{{ path('view_artiste', {'id':album.artiste.id}) }}">{{ album.artiste }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="articles-list">
+        <h1 class="page-title pge-articles">
+            Nos articles récents
+        </h1>
+        {% for article in articles |slice(0, 3)%}
+        <div class="article-item">
+            <a href="{{ path('view_article',{'id': article.id} )}}" class="arcl-img"><img
+                    src="{{vich_uploader_asset(article,'imageFile')}}" alt="image-article"></a>
+            <div class="info-article">
+                <a href="{{ path('view_article',{'id': article.id} )}}" class="arcl-img">
+                    <h3 class="ttl-article"> {{ article.nom }} </h3>
+                </a>
+                <div class="rsm-article">{{ article.contenue }}</div>
+                <div class="art-pub-tag">
+                    <span class="author-name">{{ article.auteur }}</span>
+                    <span class="date-post">{{ article.date|date("d/m/Y") }}</span>
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
 </main>
-
+{{ include('/_player.html.twig') }}
 {% endblock %}
