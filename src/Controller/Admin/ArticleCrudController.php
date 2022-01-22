@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 
 
 class ArticleCrudController extends AbstractCrudController
@@ -26,7 +27,7 @@ class ArticleCrudController extends AbstractCrudController
     {
         return [
             TextField::new('nom'),
-            TextEditorField::new('contenue'),
+            Field::new('contenue'),
             TextField::new('auteur'),
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('file')->setBasePath('/uploads/articleImage/')->onlyOnIndex()
